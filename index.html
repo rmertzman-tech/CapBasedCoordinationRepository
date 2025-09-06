@@ -236,12 +236,12 @@
             margin: 2rem 0;
         }
 
-        .toc h3 {
+        .toc h3, .toc h4 {
             margin-top: 0;
             color: var(--dark-blue);
         }
 
-        .toc ul {
+        .toc ul, .toc ol {
             list-style: none;
             padding-left: 1rem;
         }
@@ -302,7 +302,7 @@
     </style>
 </head>
 <body>
-    <!-- HEADER SECTION - APPEARS FIRST -->
+    <!-- HEADER SECTION -->
     <header>
         <div class="container">
             <h1>Capability-Based Coordination Framework</h1>
@@ -315,7 +315,7 @@
         </div>
     </header>
 
-    <!-- NAVIGATION SECTION - APPEARS SECOND -->
+    <!-- NAVIGATION SECTION -->
     <nav>
         <div class="container">
             <div class="nav-container">
@@ -334,7 +334,7 @@
     <!-- MAIN CONTENT CONTAINER -->
     <div class="container">
         
-        <!-- WELCOME/OVERVIEW SECTION - APPEARS THIRD (FIRST MAIN CONTENT) -->
+        <!-- WELCOME/OVERVIEW SECTION -->
         <section id="overview" class="section">
             <h2>Repository Overview</h2>
             
@@ -378,6 +378,24 @@
                 <li><strong>Temporal Coherence Functions:</strong> Maintain identity while enabling adaptation</li>
                 <li><strong>Cross-Scale Markup Organization:</strong> Enable coordination across implementation substrates</li>
             </ul>
+
+            <!-- GETTING STARTED SECTION - NOW IN OVERVIEW -->
+            <h3>Getting Started</h3>
+
+            <div class="toc">
+                <h4>Quick Start Guide - Choose Your Path</h4>
+                <ol>
+                    <li><strong>Researchers:</strong> Begin with <a href="#math-foundations">Mathematical Foundations</a> → <a href="#empirical-protocols">Empirical Protocols</a> → Your Domain</li>
+                    <li><strong>Practitioners:</strong> Start with <a href="#implementation">Implementation Guidelines</a> → Case Studies → <a href="#software-tools">Software Tools</a></li>
+                    <li><strong>Developers:</strong> Explore <a href="#software-tools">Software Tools</a> → API Documentation → Contributing Guidelines</li>
+                    <li><strong>Students:</strong> Review Overview → Educational Materials → Practical Exercises</li>
+                </ol>
+            </div>
+
+            <div style="margin: 2rem 0; text-align: center;">
+                <a href="#math-foundations" class="button">Begin Deep Dive</a>
+                <a href="mailto:robert.mertzman@spcolleg.edu" class="button secondary">Contact Author</a>
+            </div>
 
             <div class="empirical-evidence">
                 <h4>Empirical Validation Status</h4>
@@ -541,16 +559,6 @@ FunctionalEquivalence(A₁, A₂, φ, C) ⟺
                     <h4>Indigenous Cultures</h4>
                     <p>Contribute long-term thinking and ecological integration through land-based knowledge and seven-generation planning.</p>
                 </div>
-            </div>
-
-            <h3>4. Coalition Effectiveness Measurement</h3>
-            <div class="code-block">
-EffectiveFAIM(C, φ, s, t) ⟺ 
-  ∃strategy_profile σ_C ∀counter_strategies σ_{-C}:
-    (ExecuteJoint(σ_C, σ_{-C}, s) ⊨ φ) ∧ 
-    (∀i ∈ C: MaintainsATCF(i, σ_C, t)) ∧
-    (FunctionalEquivalence(C, φ, σ_C)) ∧
-    (CulturalAuthenticity(C, σ_C, t))
             </div>
 
             <div class="empirical-evidence">
@@ -1055,21 +1063,6 @@ class AI_PersonalityFramework:
                     <li><strong>Boundary Conditions:</strong> Clear specification of framework limitations and failure modes</li>
                 </ul>
             </div>
-
-            <h3>Getting Started</h3>
-
-            <div class="toc">
-                <h4>Quick Start Guide</h4>
-                <ol>
-                    <li><strong>Researchers:</strong> Begin with <a href="#math-foundations">Mathematical Foundations</a> → <a href="#empirical-protocols">Empirical Protocols</a> → Your Domain</li>
-                    <li><strong>Practitioners:</strong> Start with <a href="#implementation">Implementation Guidelines</a> → Case Studies → <a href="#software-tools">Software Tools</a></li>
-                    <li><strong>Developers:</strong> Explore <a href="#software-tools">Software Tools</a> → API Documentation → Contributing Guidelines</li>
-                    <li><strong>Students:</strong> Review Overview → Educational Materials → Practical Exercises</li>
-                </ol>
-            </div>
-
-            <a href="#overview" class="button">Explore Repository</a>
-            <a href="mailto:robert.mertzman@spcolleg.edu" class="button secondary">Contact Author</a>
         </section>
 
         <!-- FOOTER SECTION -->
