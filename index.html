@@ -73,7 +73,7 @@
         .nav-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 2rem;
+            gap: 1.5rem;
             justify-content: center;
         }
 
@@ -86,9 +86,9 @@
             font-weight: 500;
         }
 
-        .nav-link:hover {
-            background-color: var(--light-blue);
-            color: var(--dark-blue);
+        .nav-link:hover, .nav-link.active {
+            background-color: var(--primary-blue);
+            color: var(--white);
         }
 
         .section {
@@ -117,6 +117,13 @@
         .section h4 {
             color: var(--text-dark);
             font-size: 1.2rem;
+            margin: 1rem 0 0.5rem 0;
+        }
+        
+        .section h5 {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            font-weight: 600;
             margin: 1rem 0 0.5rem 0;
         }
 
@@ -243,6 +250,7 @@
             margin: 1rem 0;
             text-align: center;
             font-size: 1.1rem;
+            overflow-x: auto;
         }
 
         .logic-box {
@@ -299,6 +307,7 @@
             <div class="nav-container">
                 <a href="#overview" class="nav-link">Overview</a>
                 <a href="#math-foundations" class="nav-link">Mathematical Foundations</a>
+                <a href="#detailed-math" class="nav-link">Detailed Formalization</a>
                 <a href="#coalition-logic" class="nav-link">Coalition Logic</a>
                 <a href="#empirical-protocols" class="nav-link">Empirical Validation</a>
                 <a href="#software-tools" class="nav-link">Software Tools</a>
@@ -326,7 +335,7 @@
                     <div class="stat-label">Lines of Code</div>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">8</span>
+                    <span class="stat-number">9</span>
                     <div class="stat-label">Major Sections</div>
                 </div>
                 <div class="stat-card">
@@ -398,7 +407,7 @@
         <!-- MATHEMATICAL FOUNDATIONS SECTION -->
         <section id="math-foundations" class="section">
             <h2>Mathematical Foundations</h2>
-            <p>This section provides the complete mathematical formalization of the Capability-Based Coordination framework, including formal definitions, proofs, and computational specifications.</p>
+            <p>This section provides a high-level overview of the mathematical formalization of the Capability-Based Coordination framework, including key definitions and concepts.</p>
 
             <h3>Core Mathematical Definitions</h3>
 
@@ -453,6 +462,118 @@
                 <h4>Theorem</h4>
                 <p>Any agent capable of questioning normative authority already demonstrates the ATCF requirements for ethical coordination.</p>
                 <p><strong>Proof sketch:</strong> The act of asking "Why should I be ethical?" presupposes historical continuity, present integration, prospective coherence, and meta-constructor capacity—the very components that ground normative coordination.</p>
+            </div>
+            
+            <div class="highlight-box" style="text-align: center; margin-top: 3rem;">
+                <h3>Ready for a Deeper Look?</h3>
+                <p>The above provides a conceptual overview. For the complete, rigorous mathematical framework including recursive definitions, proofs, and extensions, proceed to the detailed formalization.</p>
+                <a href="#detailed-math" class="button">View Detailed Formalization</a>
+            </div>
+        </section>
+
+        <!-- DETAILED MATHEMATICAL FORMALIZATION SECTION -->
+        <section id="detailed-math" class="section">
+            <h2>Detailed Mathematical Formalization</h2>
+            <p>This section provides the complete mathematical framework for BROA+ systems, recursive information processing, and capability-based coordination. It is intended for specialists seeking a rigorous, computational understanding of the theory.</p>
+
+            <h3>I. Foundational Definitions</h3>
+            <h5>Information State Space</h5>
+            <p>Let Ω be the universal information space containing all possible information states. A BROA+ system operates within a subset S ⊆ Ω defined by its current informational boundaries.</p>
+            <div class="highlight-box">
+                <h4>Definition 1.1 (BROA+ State)</h4>
+                <p>A BROA+ system at time t is defined as a 5-tuple:</p>
+                <div class="math-formula">A(t) = ⟨B(t), R(t), O(t), Auth(t), P(t)⟩</div>
+                <ul>
+                    <li><strong>B(t) ⊆ Ω:</strong> Belief state (information about reality)</li>
+                    <li><strong>R(t):</strong> Rule system (computational procedures)</li>
+                    <li><strong>O(t):</strong> Ontological structure (categorical framework)</li>
+                    <li><strong>Auth(t):</strong> Authenticity function (meta-evaluation criteria)</li>
+                    <li><strong>P(t):</strong> Probability distribution over possible states</li>
+                </ul>
+            </div>
+            <div class="highlight-box">
+                <h4>Definition 1.2 (BROA+ Information Content)</h4>
+                <p>The information content of a BROA+ system is:</p>
+                <div class="math-formula">I(A(t)) = I(B(t)) + I(R(t)) + I(O(t)) + I(Auth(t)) + H(P(t))</div>
+                 <ul>
+                    <li><strong>I(X)</strong> is the Kolmogorov complexity of component X</li>
+                    <li><strong>H(P(t))</strong> is the Shannon entropy of probability distribution P(t)</li>
+                </ul>
+            </div>
+
+            <h3>II. Recursive Update Dynamics</h3>
+             <div class="highlight-box">
+                <h4>Definition 2.1 (Recursive Update Function)</h4>
+                <p>The recursive update of a BROA+ system is:</p>
+                <div class="math-formula">A(t+1) = Φ(A(t), E(t), A(t))</div>
+                <p>This captures the essential recursive property: the system uses its current configuration to determine how to modify its current configuration.</p>
+            </div>
+            <h5>Component-Wise Recursive Updates</h5>
+            <div class="math-formula">Belief Update: B(t+1) = B(t) ⊕ β(B(t), R(t), O(t), E(t))</div>
+            <div class="math-formula">Rule Update: R(t+1) = R(t) ⊕ ρ(R(t), B(t), Auth(t), performance_feedback(t))</div>
+            <div class="math-formula">Ontological Update: O(t+1) = O(t) ⊕ ω(O(t), B(t), R(t), category_conflict_signals(t))</div>
+            <div class="math-formula">Authenticity Update: Auth(t+1) = Auth(t) ⊕ α(Auth(t), coherence_feedback(t), coordination_success(t))</div>
+
+            <h3>III. Temporal Coherence Function (Mathematical Formalization)</h3>
+            <div class="highlight-box">
+                <h4>Definition 3.1 (Identity Kernel)</h4>
+                <p>The identity kernel IK(A) of a BROA+ system consists of those information patterns that remain invariant under recursive transformation:</p>
+                <div class="math-formula">IK(A) = {x ∈ A : ∀t, Φ(A(t), E, A(t)) preserves essential structure of x}</div>
+            </div>
+             <div class="highlight-box">
+                <h4>Definition 3.2 (ATCF)</h4>
+                <p>The Adaptive Temporal Coherence Function measures system coherence across time:</p>
+                <div class="math-formula">ATCF(A, t₁, t₂) = w₁·HC + w₂·PI + w₃·PC + w₄·MCC</div>
+                <h5>Component Definitions:</h5>
+                <p><strong>Historical Continuity (HC):</strong> Measures preservation of identity kernel across time.</p>
+                <div class="math-formula">HC(t₁,t₂) = |IK(A(t₁)) ∩ IK(A(t₂))| / |IK(A(t₁)) ∪ IK(A(t₂))|</div>
+                <p><strong>Present Integration (PI):</strong> Measures inconsistency between BROA+ components.</p>
+                <div class="math-formula">PI(t) = 1 - Σᵢ D(Bᵢ(t), Rᵢ(t), Oᵢ(t), Authᵢ(t)) / |Components|</div>
+                <p><strong>Prospective Coherence (PC):</strong> Measures accuracy of future-oriented projections.</p>
+                <div class="math-formula">PC(t₁,t₂) = 1 - |Expected_Future_State(t₁) - Actual_State(t₂)| / |State_Space|</div>
+                <p><strong>Meta-Constructor Capacity (MCC):</strong> Measures the system's ability to improve itself.</p>
+                <div class="math-formula">MCC(t) = Σₖ Effectiveness(self_modification_k(t)) / Total_Modifications</div>
+            </div>
+            
+            <h3>IV. Information Integration & Quantum Extensions</h3>
+            <div class="logic-box">
+                <h4>Advanced Theoretical Extensions</h4>
+                <p><strong>Information Integration Theory:</strong> We define BROA+ Integrated Information as Φ(A) = Φ(B,R,O,Auth,P) - Σᵢ Φ(Component_i), measuring emergent information.</p>
+                <p><strong>Quantum Information Extensions:</strong> In quantum-enhanced systems, states exist in superposition |A(t)⟩ = Σᵢ αᵢ|Bᵢ⟩⊗|Rᵢ⟩⊗|Oᵢ⟩⊗|Authᵢ⟩. Authentic choice acts as a measurement operator M_authentic, collapsing the superposition.</p>
+            </div>
+            
+            <h3>VI. Coordination Theory Extensions</h3>
+            <div class="highlight-box">
+                <h4>Definition 6.2 (Functional Equivalence)</h4>
+                <p>Two BROA+ systems are functionally equivalent for task T if their performance is similar:</p>
+                <div class="math-formula">FE(A₁, A₂, T) = 1 - |Performance(A₁, T) - Performance(A₂, T)| / Max_Performance_Difference</div>
+            </div>
+            <div class="highlight-box">
+                <h4>Definition 6.3 (Coordination Effectiveness)</h4>
+                 <div class="math-formula">CE(Network, Task) = Σᵢⱼ FE(Aᵢ, Aⱼ, Task) × Communication_Efficiency(Aᵢ, Aⱼ) × Goal_Alignment(Aᵢ, Aⱼ)</div>
+            </div>
+            
+             <h3>XI. Implementation Algorithms</h3>
+             <div class="highlight-box">
+                <h4>Basic BROA+ Update Algorithm</h4>
+                <pre><code>Algorithm: BROA_Plus_Update(A_current, input, time_step)
+1. Evaluate current ATCF(A_current)
+2. For each component C in {B, R, O, Auth, P}:
+   a. Generate potential updates via recursive transformation
+   b. Evaluate projected ATCF for each potential update
+   c. Select update maximizing future ATCF
+3. Apply selected updates with coherence constraints
+4. Return updated BROA+ state</code></pre>
+            </div>
+            
+            <div class="validation-criteria">
+                <h4>Open Research Questions</h4>
+                <ul>
+                    <li>What is the exact computational complexity class of BROA+ systems with unbounded recursive depth?</li>
+                    <li>Under what conditions do BROA+ systems converge to stable, coherent configurations?</li>
+                    <li>Do BROA+ systems implement optimal information processing strategies given thermodynamic constraints?</li>
+                    <li>Can any conscious information processing system be represented as a BROA+ system?</li>
+                </ul>
             </div>
         </section>
 
@@ -828,43 +949,41 @@ python examples/basic_atcf_example.py</code></pre>
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    // Calculate offset for the sticky nav
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20; // 20px buffer
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
         });
 
-        // Add active state to navigation
+        // Add active state to navigation on scroll
         const sections = document.querySelectorAll('.section');
         const navLinks = document.querySelectorAll('.nav-link');
+        const nav = document.querySelector('nav');
 
         function updateActiveNav() {
-            const scrollPos = window.scrollY + 100;
-            
-            sections.forEach((section, index) => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                
-                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    if (navLinks[index]) {
-                        navLinks[index].classList.add('active');
-                    }
+            let current = '';
+            const navHeight = nav.offsetHeight;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - navHeight - 25;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
                 }
             });
         }
-
-        // Add CSS for active state
-        const style = document.createElement('style');
-        style.textContent = `
-            .nav-link.active {
-                background-color: var(--primary-blue);
-                color: var(--white);
-            }
-        `;
-        document.head.appendChild(style);
 
         window.addEventListener('scroll', updateActiveNav);
         window.addEventListener('load', updateActiveNav);
